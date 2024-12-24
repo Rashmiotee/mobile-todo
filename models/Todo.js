@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 const todoSchema = new mongoose.Schema({
-    employee: { type: mongoose.Types.ObjectId, ref: "Employee", required: true },
+    employee: { type: mongoose.Types.ObjectId, ref: "employee", required: true },
     task: { type: String, required: true },
     desc: { type: String, required: true },
     priority: { type: String, required: true },
