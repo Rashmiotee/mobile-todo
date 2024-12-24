@@ -62,7 +62,7 @@ exports.employeeLogin = asyncHandler(async (req, res) => {
         return res.status(401).json({ message: "password does not match" })
     }
 
-    const token = jwt.sign({ _id: result._id }, proccess.env.JWT_SECRET, { expiresIn: "1d" })
+    const token = jwt.sign({ _id: result._id }, process.env.JWT_SECRET, { expiresIn: "1d" })
     res.cookie("todo-employee", token, {
         maxAge: 1000 * 60 * 60 * 24,
         httpOnly: true,
