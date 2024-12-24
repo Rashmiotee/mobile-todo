@@ -3,7 +3,7 @@ const { completeEmployeeTodo, readEmployeeTodo } = require("../controllers/emplo
 const router = require("express").Router()
 
 router
-    .get("read/todo", readEmployeeTodo)
-    .put("update/todo/:tid", completeEmployeeTodo)
+    .get("/read/todo", readEmployeeTodo)
+    .put("/update/todo/:tid", completeEmployeeTodo)
 
 module.exports = router
