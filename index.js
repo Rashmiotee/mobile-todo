@@ -21,7 +21,13 @@ app.use("/api/employee", require("./routes/employee.route"))
 app.use("*", (req, res) => {
     res.status(404).json({ message: "resource not found" })
 })
+app.use((err, req, res, next) => {
+    if (err) {
+        console.log(err)
+        return res.status(500).json({ message: "something went wrong" })
 
+    }
+})
 mongoose.connect(process.env.MONGO_URL)
 mongoose.connection.once("open", () => {
     console.log("mongo connect")
